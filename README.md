@@ -3,19 +3,29 @@
 [![Documentation Status](https://readthedocs.org/projects/grand/badge/?version=latest)](https://grand.readthedocs.io/en/latest/?badge=latest)
 [![DOI](https://zenodo.org/badge/270705695.svg)](https://zenodo.org/badge/latestdoi/270705695)
 
-# _grand_ : Grand Canonical Water Sampling in OpenMM
+# _grand-alchemical-ligand_ 
 
-### Background
+Extension of essexlab/grand enabling GCMC sampling of alchemically perturbed ligands in OpenMM.
 
-This Python module is designed to be run with OpenMM in order to simulate grand
-canonical Monte Carlo (GCMC) insertion and deletion moves of water molecules.
-This allows the particle number to vary according to a fixed chemical
-potential, and offers enhanced sampling of water molecules in occluded
-binding sites.
-The theory behind our work on GCMC sampling can be found in the References
-section below.
+### 🔬 Overview
 
-### Installation & Usage
+This repository is a modified version of the original grand package developed by Essex Lab, which implements grand canonical Monte Carlo (GCMC) water sampling in OpenMM.
+
+This fork introduces new functionality to perform GCMC sampling in the presence of alchemically perturbed ligands and
+enable integration with alchemical free energy workflows
+
+These modifications were developed for:
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+### ⚠️ Relationship to upstream
+
+This code is derived from:
+👉 https://github.com/essexlab/grand
+
+All original functionality and core methods are due to the Essex Lab authors. This repository adds new methods on top of the original implementation.
+
+### 🛠️ Installation & Usage
 
 This module can be installed from this directory by running the following
 command:
@@ -44,40 +54,55 @@ Alternatively, _grand_ and its dependencies can be installed via conda:
 conda install -c omnia -c anaconda -c conda-forge -c essexlab grand
 ```
 
-Several (very short) examples of how this module is ran alongside OpenMM can be found in
-the `examples/` directory.
-Additional [examples](https://github.com/essex-lab/grand-paper) and 
-[documentation](https://grand.readthedocs.io/en/latest/) are also available, although please note that the examples listed within the `grand-paper` repo are intended to be run using version 1.0.x of _grand_ and may not work with later versions.
+### 🧪 Reproducing the paper
 
-### Citing _grand_
+The exact version of the code used in the paper is:
 
-The _grand_ module is released under the MIT licence. If results from this
-module contribute to a publication, we ask that you cite Refs. 1 and 2, below.
-Ref. 1 discusses the initial implemention while ref. 2 discusses the implementation
-and testing of the non-equilibrium moves.
-Additional references describing the theory upon which the GCMC implemention
-in _grand_ is based are also provided below (Refs. 3-4).
+👉 Release: v1.0-paper
+👉 Branch: alchemical_ligand
 
-### Contributors
+To reproduce results:
 
-- Marley Samways `<mls2g13@soton.ac.uk>`
-- Hannah Bruce Macdonald
-- Ollie Melling `<ojm2g16@soton.ac.uk>`
-- Will Poole `<wp1g16@soton.ac.uk>`
+```bash
+git checkout v1.0-paper
+```
 
-### Contact
 
-If you have any problems or questions regarding this module, please contact
-one of the contributors, or send an email to `<j.w.essex@soton.ac.uk>`.
+### 📜 Citing _grand-alchemical-ligand_
 
-### References
+If you use this code, please cite:
+
+This work
+Nithishwer Mouroug Anand, *XXXXXXXXXXXXXXXXXXXX*, 2026
+
+Original grand package
 
 1. M. L. Samways, H. E. Bruce Macdonald, J. W. Essex, _J. Chem. Inf. Model._,
 2020, 60, 4436-4441, DOI: https://doi.org/10.1021/acs.jcim.0c00648
 2. O. J. Melling, M. L. Samways, Y. Ge, D. L. Mobley, J. W. Essex, _J. Chem. Theory Comput._, 2023,
 DOI: https://doi.org/10.1021/acs.jctc.2c00823
-3. G. A. Ross, M. S. Bodnarchuk, J. W. Essex, _J. Am. Chem. Soc._, 2015,
-137, 47, 14930-14943, DOI: https://doi.org/10.1021/jacs.5b07940
-4. G. A. Ross, H. E. Bruce Macdonald, C. Cave-Ayland, A. I. Cabedo
-Martinez, J. W. Essex, _J. Chem. Theory Comput._, 2017, 13, 12, 6373-6381, DOI:
-https://doi.org/10.1021/acs.jctc.7b00738
+
+### 👤 Authors
+
+**Modifications for alchemical ligand GCMC**
+- Nithishwer Mouroug Anand
+- Philip C Biggin 
+
+**Original authors (grand)**
+- Marley Samways
+- Hannah Bruce Macdonald
+- Ollie Melling
+- Will Poole
+- J. W. Essex
+
+### 📜 License
+
+This project is distributed under the same license as the original grand repository (MIT).
+
+### 📬 Contact
+
+For questions about:
+
+- alchemical ligand modifications → contact nithishwer.mourouganand@reuben.ox.ac.uk or philip.biggin@bioch.ox.ac.uk
+- original grand → contact Essex Lab
+
